@@ -1,0 +1,46 @@
+private void btnEdit_Click(object sender, RoutedEventArgs e)
+{
+    if (dgFelvetelizok.SelectedItem != null)
+    {
+        Students selectedStudent = (Students)dgFelvetelizok.SelectedItem;
+
+        // Open the EditStudentWindow and pass the selected student
+        EditStudentWindow editStudentWindow = new EditStudentWindow(selectedStudent);
+        editStudentWindow.ShowDialog();
+
+        // Check if changes were saved in the EditStudentWindow
+        if (editStudentWindow.ChangesSaved)
+        {
+            // Update the main window's data grid
+            dgFelvetelizok.Items.Refresh();
+        }
+    }
+    else
+    {
+        MessageBox.Show("Please select a student to edit.", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+    }
+}
+
+
+public bool ChangesSaved { get; private set; } = false;
+    private Students editedStudent;
+
+    public EditStudentWindow(Students student)
+    {
+        InitializeComponent();
+        editedStudent = student;
+
+        // Load student data into textboxes
+        txtEditOmAzonosito.Text = editedStudent.OM_Azonosito;
+        // Load other properties similarly
+    }
+
+    private void btnSaveChanges_Click(object sender, RoutedEventArgs e)
+    {
+        // Save changes back to the editedStudent object
+        editedStudent.OM_Azonosito = txtEditOmAzonosito.Text;
+        // Save other properties similarly
+
+        ChangesSaved = true;
+        Close();
+    }
