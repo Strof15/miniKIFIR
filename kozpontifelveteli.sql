@@ -6,7 +6,7 @@
 -- Létrehozás ideje: 2024. Jan 17. 11:42
 -- Kiszolgáló verziója: 10.4.6-MariaDB
 -- PHP verzió: 7.3.8
-
+CREATE DATABASE miniKIFIR DEFAULT CHARACTER SET utf8 COLLATE utf8_hungarian_ci;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;
