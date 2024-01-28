@@ -1,0 +1,171 @@
+﻿<Window x:Class="miniKIFIR.DatabaseWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:miniKIFIR"
+        mc:Ignorable="d"
+        Title="DatabaseWindow" 
+         Height="560"
+        Width="600"
+         WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        WindowStartupLocation="CenterScreen"
+        >
+    
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="WindowStyles/StyleButton.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="WindowStyles/StyleCloseButton.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="WindowStyles/StyleLabel.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="WindowStyles/StyleTextbox.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+      
+
+    </Window.Resources>
+
+
+
+
+    <Border CornerRadius="40" BorderThickness="10" BorderBrush="White">
+
+
+        <Border x:Name="animatedBorder" CornerRadius="20" BorderThickness="20">
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop x:Name="GradientStop1" Color="#1E91A5" Offset="0.0"/>
+                    <GradientStop x:Name="GradientStop2" Color="#F0EB36" Offset="0.5"/>
+                    <GradientStop x:Name="GradientStop3" Color="#73C269" Offset="1.0"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+            <Border.Triggers>
+                <EventTrigger RoutedEvent="Border.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard RepeatBehavior="Forever">
+                            <ColorAnimation
+                        Storyboard.TargetName="GradientStop1"
+                        Storyboard.TargetProperty="Color"
+                        To="#F0EB36"
+                        Duration="0:0:2.5"/>
+                            <ColorAnimation
+                        Storyboard.TargetName="GradientStop2"
+                        Storyboard.TargetProperty="Color"
+                        To="#73C269"
+                        BeginTime="0:0:2.5"
+                        Duration="0:0:2.5"/>
+                            <ColorAnimation
+                        Storyboard.TargetName="GradientStop3"
+                        Storyboard.TargetProperty="Color"
+                        To="#1E91A5"
+                        BeginTime="0:0:5"
+                        Duration="0:0:2.5"/>
+                            <ColorAnimation
+                        Storyboard.TargetName="GradientStop2"
+                        Storyboard.TargetProperty="Color"
+                        To="#F0EB36"
+                        BeginTime="0:0:7.5"
+                        Duration="0:0:2.5"/>
+                            <ColorAnimation
+                        Storyboard.TargetName="GradientStop1"
+                        Storyboard.TargetProperty="Color"
+                        To="#73C269"
+                        BeginTime="0:0:10"
+                        Duration="0:0:2.5"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Border.Triggers>
+            <Grid>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="150"/>
+                        <RowDefinition Height="55"/>
+                        <RowDefinition Height="55"/>
+                        <RowDefinition Height="55"/>
+                        <RowDefinition Height="55"/>
+                        <RowDefinition Height="55"/>
+                        <RowDefinition Height="80"/>
+                      
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                            <GradientStop Color="#1E91A5" Offset="0.0"/>
+                            <GradientStop Color="#F0EB36" Offset="0.5"/>
+                            <GradientStop Color="#73C269" Offset="1.0"/>
+                        </LinearGradientBrush>
+                    </Grid.Background>
+                    <Grid.Triggers>
+                        <EventTrigger RoutedEvent="Grid.Loaded">
+                            <BeginStoryboard>
+                                <Storyboard RepeatBehavior="Forever">
+                                    <ColorAnimation
+                        Storyboard.TargetProperty="(Grid.Background).(LinearGradientBrush.GradientStops)[0].Color"
+                        To="#F0EB36"
+                        Duration="0:0:2.5"/>
+                                    <ColorAnimation
+                        Storyboard.TargetProperty="(Grid.Background).(LinearGradientBrush.GradientStops)[1].Color"
+                        To="#73C269"
+                        BeginTime="0:0:2.5"
+                        Duration="0:0:2.5"/>
+                                    <ColorAnimation
+                        Storyboard.TargetProperty="(Grid.Background).(LinearGradientBrush.GradientStops)[2].Color"
+                        To="#1E91A5"
+                        BeginTime="0:0:5"
+                        Duration="0:0:2.5"/>
+                                    <ColorAnimation
+                        Storyboard.TargetProperty="(Grid.Background).(LinearGradientBrush.GradientStops)[1].Color"
+                        To="#F0EB36"
+                        BeginTime="0:0:7.5"
+                        Duration="0:0:2.5"/>
+                                    <ColorAnimation
+                        Storyboard.TargetProperty="(Grid.Background).(LinearGradientBrush.GradientStops)[0].Color"
+                        To="#73C269"
+                        BeginTime="0:0:10"
+                        Duration="0:0:2.5"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Grid.Triggers>
+
+
+                    <TextBlock Grid.RowSpan="2" Height="150" Width="150" HorizontalAlignment="left" VerticalAlignment="top">
+                        <TextBlock.Background>
+                            <ImageBrush ImageSource="WindowStyles/assets\MInikifirProjektLogo.png" Stretch="Uniform"/>
+                        </TextBlock.Background>
+
+                    </TextBlock>
+                    <Button x:Name="windowCloseBtn"  HorizontalAlignment="Right" Grid.Column="1" Grid.Row="0" BorderBrush="Transparent" BorderThickness="0" Width="70" Height="60" Content="" Click="windowCloseBtn_Click" Style="{DynamicResource CloseButton}">
+                        <Button.Background>
+                            <ImageBrush ImageSource="WindowStyles/assets/Close_default.png" Stretch="None"/>
+                        </Button.Background>
+                    </Button>
+
+                    <Label x:Name="lblAdatbase" Grid.Row="0" Grid.Column="1" Width="300" Height="70" Content="Adatbázishoz csatlakozás" FontSize="23" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="White" FontWeight="Bold"/>
+                    <Label Grid.Row="1" Content="Adatbázis elérése:" Style="{DynamicResource Labels}" FontSize="15" VerticalAlignment="Center" />
+                    <Label Grid.Row="2" Content="Adatbázis portja:" Style="{DynamicResource Labels}" FontSize="15" VerticalAlignment="Center"/>
+                    <Label Grid.Row="3" Content="Felhasználónév:" Style="{DynamicResource Labels}" FontSize="15" VerticalAlignment="Center"/>
+                    <Label Grid.Row="4" Content="Adatbázis neve:" Style="{DynamicResource Labels}" FontSize="15" VerticalAlignment="Center"/>
+                    <Label Grid.Row="5" Content="Esemény:" Style="{DynamicResource Labels}" FontSize="15" VerticalAlignment="Center"/>
+
+                    <TextBox Grid.Row="1" Grid.Column="1" x:Name="txtRoute" FontSize="16" VerticalAlignment="Center" Margin="10" Style="{DynamicResource Textbox}"  KeyDown="TextBox_KeyDown"/>
+                    <TextBox Grid.Row="2" Grid.Column="1" x:Name="txtPort" FontSize="16" VerticalAlignment="Center" Margin="10" Style="{DynamicResource Textbox}"  KeyDown="TextBox_KeyDown"/>
+                    <TextBox Grid.Row="3" Grid.Column="1" x:Name="txtUsername" FontSize="16" VerticalAlignment="Center" Margin="10" Style="{DynamicResource Textbox}"  KeyDown="TextBox_KeyDown"/>
+                    <TextBox Grid.Row="4" Grid.Column="1" x:Name="txtDatabaseName" FontSize="16" VerticalAlignment="Center" Margin="10" Style="{DynamicResource Textbox}"  KeyDown="TextBox_KeyDown"/>
+                    <ComboBox x:Name="cbEvent" Grid.Row="5" Width="300" Grid.Column="1" FontSize="16" VerticalAlignment="Center" Margin="10">
+                        <ComboBoxItem x:Name="cbImport" Content="Importálás" IsSelected="True"/>
+                        <ComboBoxItem x:Name="cbExport" Content="Exportálás"/>
+                    </ComboBox>
+                    <Button Grid.Row="6" Grid.ColumnSpan="2" Style="{DynamicResource Buttons}" Content="Csatlakozás" x:Name="btnCsatlakozas" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10" Height="50" Width="180" Click="btnCsatlakozas_Click"/>
+                </Grid>
+            </Grid>
+        </Border>
+    </Border>
+</Window>
