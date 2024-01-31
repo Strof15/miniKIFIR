@@ -1,0 +1,41 @@
+﻿<Window x:Class="miniKIFIR.ProgressWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:miniKIFIR"
+        mc:Ignorable="d"
+        Title="ProgressWindow"
+        Height="300"
+        Width="500"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        Background="Transparent"
+        AllowsTransparency="True">
+    <Border CornerRadius="40" BorderThickness="10" BorderBrush="Beige">
+        <Border x:Name="animatedBorder" CornerRadius="24" BorderThickness="18" BorderBrush="Green">
+            <Grid Background="green">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Content="Uploading to miniKIFIR..." HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+                <ProgressBar x:Name="myProgressBar" Grid.Row="1" Width="400" Value="0" HorizontalAlignment="Stretch" VerticalAlignment="Top"
+             Height="5" Background="Black">
+                    <ProgressBar.Triggers>
+                        <EventTrigger RoutedEvent="ProgressBar.Loaded">
+                            <BeginStoryboard>
+                                <Storyboard Completed="ProgressBarAnimationCompleted">
+                                    <DoubleAnimation Storyboard.TargetName="myProgressBar"
+                                     Storyboard.TargetProperty="Value"
+                                     From="0" To="100"
+                                     Duration="0:0:3"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </ProgressBar.Triggers>
+                </ProgressBar>
+            </Grid>
+        </Border>
+    </Border>
+</Window>
