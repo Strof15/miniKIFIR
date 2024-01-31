@@ -1,0 +1,68 @@
+ private bool ValidateOMAzonosito()
+        {
+            if (txtOmAzonosito.Text.Length == 11 && txtOmAzonosito.Text.All(char.IsDigit))
+            {
+                return true;
+            }
+            MessageBox.Show("Hibás OM azonosító! A számsornak 11 karakter hosszúnak kell lennie és csak számokat tartalmazhat!");
+            txtOmAzonosito.Focus();
+            txtOmAzonosito.Clear();
+            return false;
+        }
+
+        private bool ValidateName()
+        {
+            string[] nameParts = txtNev.Text.Split(' ');
+            if (nameParts.Length >= 2 && nameParts.All(part => !string.IsNullOrWhiteSpace(part) && char.IsUpper(part[0])))
+            {
+                return true;
+            }
+            MessageBox.Show("A név mező hibásan lett megadva!");
+            txtNev.Focus();
+            txtNev.Clear();
+            return false;
+        }
+
+        private bool ValidateEmail()
+        {
+            if (txtEmail.Text.Count(c => c == '@') == 1 && !txtEmail.Text.Contains(" ") && txtEmail.Text.Split('@').All(part => !string.IsNullOrWhiteSpace(part)))
+            {
+                return true;
+            }
+            MessageBox.Show("Hibás email cím!");
+            txtEmail.Focus();
+            txtEmail.Clear();
+            return false;
+        }
+
+        private bool ValidateDateOfBirth()
+        {
+            DateTime szuletesiDatum;
+            if (DateTime.TryParse(DtSzulIdo.Text, out szuletesiDatum))
+            {
+                return true;
+            }
+            MessageBox.Show("Hibás dátum formátum!");
+            return false;
+        }
+
+        private bool ValidatePoints()
+        {
+            int matekPont, magyarPont;
+            if (int.TryParse(txtMatekPont.Text, out matekPont) && int.TryParse(txtMagyarPont.Text, out magyarPont))
+            {
+                if (matekPont >= 0 && matekPont <= 50 && magyarPont >= 0 && magyarPont <= 50)
+                {
+                    return true;
+                }
+                MessageBox.Show("A magyar és matematika pontoknak 0 és 50 között kell lennie!");
+                txtMatekPont.Focus();
+            }
+            else
+            {
+                MessageBox.Show("A pontoknak számoknak kell lenniük!");
+                txtMatekPont.Focus();
+                txtMatekPont.Clear();
+            }
+            return false;
+        }
