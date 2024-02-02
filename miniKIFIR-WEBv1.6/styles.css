@@ -1,0 +1,139 @@
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    background: var(--secondColor);
+}
+:root {
+    --mainColor: #4E729F;
+    --mainColorDark: #4B6E99;
+    --secondColor: #2F4767;
+    --whiteColor: #fff;
+    --tableCellColor: #638DC1;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.titleContainer span {
+    color: var(--mainColor);
+}
+.titleContainer #title{
+    color: var(--whiteColor);
+    font-weight: 300;
+    font-size: 22px;
+}
+.inputFields {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+.row1 {
+    display: flex;
+}
+.row2 .btnDisplay {
+    width: 270px;
+}
+.inputFields .inputOMSecond .btnDisplay {
+    width: 70px;
+}
+.inputFields .inputOMSecond input[type="number"]{
+    width: 190px;
+}
+.inputFields input[type="number"]{
+    height: 20px;
+    width: 265px;
+    border-radius: 5px;
+    border: none;
+    transition: all 0.4s linear;
+}
+.inputFields input[type="number"]::-webkit-outer-spin-button,
+.inputFields input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.inputFields input[type="number"]:focus, .inputFields input[type="number"]:active{
+    height: 22px;
+    border-radius: 3px;
+    outline: none;
+}
+.btnDisplay{
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    height: 25px;
+    width: 90px;
+    background-color: var(--mainColor);
+    color: var(--whiteColor);
+    font-weight: 300;
+    font-size: 14px;
+    transition: all 0.4s linear;
+}
+.btnDisplay:hover {
+    background-color: var(--mainColorDark);   
+}
+.dataContainer table {
+    overflow: hidden;
+    border-collapse: collapse;
+    width: 100%;
+    color: var(--whiteColor);
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.dataContainer tr {
+    background: var(--tableCellColor);
+}
+.dataContainer tr:nth-child(1):hover {
+    background: var(--tableCellColor);
+}
+.dataContainer tr:hover, .dataContainer tr:nth-child(even):hover {
+    background: var(--secondColor);
+}
+.dataContainer tr:nth-child(even) {
+    background: var(--mainColor);
+}
+.dataContainer td {
+    width: 100px;
+    height: 33px;
+    text-align: center;
+    font-weight: 300;
+}
+.dataContainer th {
+    font-weight: 300;
+    width: 110px;
+    height: 40px;
+}
+.dataContainer td:nth-child(2) {
+    width: 130px;
+}
+.dataContainer td:nth-child(1) {
+    color: #b4eaff;
+    width: 130px;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.tableRow {
+    animation: fadeIn 0.5s ease;
+}
+
+@media screen and (max-width: 765px) {
+    .dataContainer {
+        overflow: auto;
+    }
+    .container {
+        height: 100vh;
+    }
+}
