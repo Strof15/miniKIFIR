@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--LINKS-->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+
+    <title>miniKIFIR Adatbázis</title>
+</head>
+<body>
+    <div class="container">
+        <div class="titleContainer">
+            <h3 id="title">miniKIFIR <span>Adatbázis</span></h3>
+        </div>
+        <div class="inputFields">
+            <div class="row1">
+                <input oninput="SearchData()" type="number" placeholder="OM Azonosító" id="inputOM">
+            </div>
+            <div class="row2">
+                <button onclick="ListData()" class="btnDisplay" id="btnGet">Lekérdezés</button>
+            </div>
+        </div>
+        <div class="dataContainer">
+            <table id="dataTable">
+            </table>
+        </div>
+    </div>
+    <!--JS LINK-->
+    <script src="scripts.js"></script>
+</body>
+</html>
