@@ -1,0 +1,477 @@
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    background: var(--secondColor);
+}
+:root {
+    --mainColor: #4E729F;
+    --mainColorDark: #4B6E99;
+    --secondColor: #2F4767;
+    --whiteColor: #fff;
+    --tableCellColor: #638DC1;
+    --btnColor: #385272;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.card {
+    background: var(--tableCellColor);
+    width: 17vw;
+    height: 20vh;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: all 0.4s ease;
+}
+.card:hover {
+    border-radius: 8px;
+    cursor: pointer;
+    background: var(--mainColorDark);
+}
+.card span {
+    color: var(--secondColor);
+}
+.card #title{
+    color: var(--whiteColor);
+    font-weight: 300;
+    font-size: 22px;
+}
+.card .titleStat {
+    margin-bottom: 0;
+}
+.inputFields, .card {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+.card.small {
+    height: 20vh;
+}
+.card .row1, .card .row2 {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.card.small .row1 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+.card.small .row1.stats {
+    padding-left: 20px;
+}
+.row2 .btnDisplay {
+    width: 270px;
+}
+.inputFields.shortBtn .btnDisplay {
+    width: 70px;
+}
+.inputFields.shortBtn input[type="number"]{
+    width: 190px;
+}
+.inputFields input[type="number"], .inputFields input[type="text"]{
+    height: 20px;
+    width: 265px;
+    border-radius: 5px;
+    padding-left: 5px;
+    border: none;
+    transition: all 0.4s linear;
+}
+.inputFields input[type="number"]::-webkit-outer-spin-button,
+.inputFields input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.inputFields input[type="number"]:focus, .inputFields input[type="number"]:active, .inputFields input[type="text"]:focus, .inputFields input[type="text"]:active{
+    height: 22px;
+    border-radius: 3px;
+    outline: none;
+}
+.btnDisplay{
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    height: 25px;
+    width: 90px;
+    background-color: var(--btnColor);
+    color: var(--whiteColor);
+    font-weight: 300;
+    font-size: 14px;
+    transition: all 0.4s linear;
+}
+.btnDisplay:hover {
+    background-color: var(--mainColorDark);   
+}
+.dataContainer table {
+    overflow: hidden;
+    border-collapse: collapse;
+    width: 100%;
+    color: var(--whiteColor);
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.dataContainer tr {
+    background: var(--tableCellColor);
+}
+.dataContainer tr:nth-child(1):hover {
+    background: var(--tableCellColor);
+}
+.dataContainer tr:hover, .dataContainer tr:nth-child(even):hover {
+    background: var(--secondColor);
+}
+.dataContainer tr:nth-child(even) {
+    background: var(--mainColor);
+}
+.inputFields hr {
+    width: 150px;
+    border-radius: 6px;
+    margin: 0;
+}
+.dataContainer td {
+    width: 100px;
+    height: 33px;
+    text-align: center;
+    font-weight: 300;
+}
+.dataContainer th {
+    font-weight: 300;
+    width: 110px;
+    height: 40px;
+}
+.dataContainer td:nth-child(2) {
+    width: 130px;
+}
+.dataContainer td:nth-child(1) {
+    color: #b4eaff;
+    width: 130px;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.tableRow {
+    animation: fadeIn 0.5s ease;
+}
+.cardContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 40vw;
+}
+.cardContainer .row1 h3{
+    padding: 0;
+    margin: 0;
+    color: var(--whiteColor);
+    font-weight: 300;
+    font-size: 14px;
+}
+.indexSection {
+    display: inline-block;
+    width: 100%;
+    height: 80vh;
+    margin-bottom: -7px;
+}
+.taskSection {
+    display: inline-block;
+    width: 100%;
+    height: 60vh;
+    margin-bottom: -7px;
+    background: var(--whiteColor);
+}
+.content{
+    max-width: 1250px;
+    margin: auto;
+    padding: 0 30px;
+}
+.navbar{
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    padding: 25px 0;
+    transition: all 0.3s ease;
+  }
+.navbar span {
+    color: var(--tableCellColor);
+    font-size: 15px;
+}
+.navbar.sticky{
+    background: var(--secondColor);
+    padding: 10px 0;
+    box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.1);
+}
+.navbar .content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar .logo a{
+    color: white;
+    font-size: 30px;
+    font-weight: 300;
+    text-decoration: none;
+}
+.navbar .menu-list{
+    display: inline-flex;
+}
+.menu-list li{
+    list-style: none;
+}
+.menu-list li a{
+    color: #fff;
+    font-size: 22px;
+    font-weight: 500;
+    margin-left: 65px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.menu-list li a:hover{
+    color: rgb(131, 131, 131);
+}
+.icon{
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+}
+.menu-list .cancel-btn{
+    position: absolute;
+    right: 30px;
+    top: 20px;
+}
+@media (max-width: 1230px) {
+    .content{
+      padding: 0 60px;
+    }
+}
+@media (max-width: 1100px) {
+    .content{
+      padding: 0 40px;
+    }
+}
+@media (max-width: 900px) {
+    .content{
+      padding: 0 30px;
+    }
+}
+@media (max-width: 980px) {
+    body.disabled{
+      overflow: hidden;
+}
+    .icon{
+      display: block;
+}
+    .icon.hide{
+      display: none;
+}
+.navbar .menu-list{
+      position: fixed;
+      height: 100vh;
+      width: 100%;
+      max-width: 400px;
+      left: -100%;
+      top: 0px;
+      display: block;
+      padding: 40px 0;
+      text-align: center;
+      transition: all 0.3s ease;
+      background-color: var(--secondColor);
+}
+.navbar.show .menu-list{
+      left: 0%;
+}
+.navbar .menu-list li{
+      margin-top: 45px;
+}
+.navbar .menu-list li a{
+      font-size: 23px;
+      margin-left: -100%;
+      transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.navbar.show .menu-list li a{
+      margin-left: 0px;
+    }
+}
+@media (max-width: 380px) {
+    .navbar .logo a{
+      font-size: 27px;
+    }
+}
+@media screen and (max-width: 1400px) {
+    .container {
+        height: 100vh;
+    }
+    .card, .card.small {
+        width: 30vw;
+        height: 20vh;
+    }
+    .card:hover, .card.small:hover {
+        width: 30vw;
+    }
+    .cardContainer {
+        flex-direction: column;
+        width: 30vw;
+    }
+}
+.mainContent {
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+.mainContent .mainImage img {
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: all 0.4s ease;
+}
+.mainContent .mainImage img:hover {
+    transform: scale(1.05);
+}
+.mainContent h1 {
+    color: var(--whiteColor);
+    font-weight: 300;
+    margin-bottom: 0;
+}
+.mainContent p {
+    color: #cccccc;
+    margin: 0;
+}
+.mainContent span {
+    color: var(--tableCellColor);
+}
+.mainContent .btnLearn {
+    margin-top: 5px;
+    width: 120px;
+    height: 25px;
+    border-radius: 6px;
+    border: none;
+    background-color: var(--mainColor);
+    color: var(--whiteColor);
+}
+.taskSection {
+    text-align: center;
+}
+.taskTitle {
+    color: #3f3f3f;
+}
+.taskCard-holder {
+    display: flex;
+    gap: 125px;
+    justify-content: center;
+    align-items: center;
+}
+.taskCard-holder .taskCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 300px;
+    height: 350px;
+    border-radius: 6px;
+    background: #7da4d3;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: all 0.4s ease;
+}
+.taskCard img {
+    width: 125px;
+}
+.taskCard:hover {
+    border-radius: 10px;
+    transform: scale(1.02);
+}
+.taskCard a {
+    background: var(--mainColor);
+    padding: 5px 45px;
+    border-radius: 6px;
+    transition: all 0.4s ease;
+    text-decoration: none;
+    color: var(--whiteColor);
+}
+.taskCard a:hover {
+    background: var(--tableCellColor);
+    border-radius: 10px;
+}
+@media screen and (max-width: 1100px) {
+    .mainContent .mainImage img {
+        width: 45vw;
+    }
+    .mainContent .mainImage img:hover {
+        transform: scale(1);
+    }
+    .container {
+        height: 100vh;
+    }
+    .card, .card.small {
+        width: 35vw;
+        height: 35vh;
+    }
+    .card:hover, .card.small:hover {
+        width: 35vw;
+    }
+    .cardContainer {
+        flex-direction: column;
+        width: 80vw;
+    }
+}
+@media screen and (max-width: 765px) {
+    .taskCard-holder {
+        gap: 125px;
+        flex-direction: column;
+    }
+    .taskCard-holder {
+        gap: 30px;
+    }
+    .taskCard-holder .taskCard {
+        width: 70vw;
+        height: 35vh;
+    }
+    .indexSection {
+        height: 70vh;
+    }
+    .taskSection {
+        height:  100vh;
+    }
+    .mainContent .mainImage img {
+        width: 90vw;
+    }
+    .mainContent {
+        text-align: center;
+        justify-content: center;
+        gap: 10px;
+    }
+    .mainContent {
+        flex-direction: column;
+    }
+    .dataContainer {
+        width: 100vw;
+        overflow-x: scroll;
+    }
+    .container {
+        height: 100vh;
+    }
+    .card, .card.small {
+        width: 80vw;
+        height: 20vh;
+    }
+    .card:hover, .card.small:hover {
+        width: 80vw;
+    }
+    .cardContainer {
+        flex-direction: column;
+        width: 80vw;
+    }
+}
