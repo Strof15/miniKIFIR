@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--LINKS-->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <title>miniKIFIR Adatbázis</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="content">
+            <div class="logo">
+                <a id="title" href="index.html">miniKIFIR <span>Adatbázis</span></a>
+            </div>
+            <ul class="menu-list">
+                <div class="icon cancel-btn">
+                    <i class="ri-close-line"></i>
+                </div>
+                <li><a href="index.html#indexSection">Főoldal</a></li>
+                <li><a href="index.html#taskSection">Feladatok</a></li>
+            </ul>
+            <div class="icon menu-btn">
+                <i class="ri-menu-line"></i>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="card">
+            <h3 id="title">miniKIFIR <span>Adatbázis</span></h3>
+            <div class="inputFields shortBtn">
+                <div class="row1">
+                    <input type="number" placeholder="OM Azonosító" id="inputOM">
+                    <button onclick="ProcessData(true)" class="btnDisplay" id="btnSearch">Keresés</button>
+                </div>
+                <hr>
+                <div class="row2">
+                    <input type="number" placeholder="Összesített pontszám" id="inputSum">
+                    <button onclick="ProcessData(false)" class="btnDisplay" id="btnGet">Keresés</button>
+                </div>
+            </div>
+        </div>
+        <div class="dataContainer">
+            <table id="dataTable">
+            </table>
+        </div>
+    </div>
+    <!--JS LINK-->
+    <script src="scripts.js"></script>
+</body>
+</html>
